@@ -15,6 +15,42 @@ package q5
 //Ajude Pedro a lidar com esta tarefa fácil.
 
 func ProcessString(s string) string {
-	// Seu código aqui
+	package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+
+	Entrada := "Entrada fornecida"
+
+	Entrada = strings.Map(func(r rune) rune {
+		switch r {
+		case 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u':
+			return -1
+		default:
+			return r
+		}
+	}, Entrada)
+
+	Entrada = strings.Map(func(r rune) rune {
+		if r >= 'A' && r <= 'Z' || r >= 'a' && r <= 'z' {
+			return '.' + r
+		}
+		return r
+	}, Entrada)
+
+	Entrada = strings.Map(func(r rune) rune {
+		if r >= 'A' && r <= 'Z' {
+			return r + ('a' - 'A')
+		}
+		return r
+	}, Entrada)
+
+	fmt.Println(Entrada)
+}
+
 	return ""
 }
