@@ -25,18 +25,18 @@ func classifyPrices(prices []int) (int, error) {
 	if n == 1 {
 		return 3, nil
 	}
-	isIncreasing := true
-	isDecreasing := true
+	Crescente := true
+	Decrescente := true
 	for i := 1; i < n; i++ {
 		if prices[i] > prices[i-1] {
-			isDecreasing = false
+			Decrescente = false
 		} else if prices[i] < prices[i-1] {
-			isIncreasing = false
+			Crescente = false
 		}
 	}
-	if isIncreasing {
+	if Crescente {
 		return 1, nil
-	} else if isDecreasing {
+	} else if Decrescente {
 		return 2, nil
 	} else {
 		return 3, nil
